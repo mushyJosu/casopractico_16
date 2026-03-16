@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+
+struct registroParticipante {
+	std::string folio;
+	std::string nombre;
+	int asiento;
+};
+
+registroParticipante registroParticipantes() {
+	registroParticipante p1; //delclare p1 para el registro.
+	std::cout << "ingrese su  folio:\n",
+	std::cin >> p1.folio;
+	std::cout << "ingrese su nombre:\n";
+	std::cin >> p1.nombre; 
+	return p1;
+
+}
