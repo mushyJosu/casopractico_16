@@ -1,18 +1,39 @@
 #include <iostream>
 #include <string>
 
+// ================================================================
+// STRUCT: registroParticipante
+// DESCRIPCIÓN: Molde de datos que agrupa la información de cada usuario.
+// MIEMBROS:
+//   - folio (string): Identificador único del registro.
+//   - nombre (string): Nombre completo del participante.
+//   - asiento (int): Número de lugar asignado (se llena en la fase de asignación).
+
 struct registroParticipante {
 	std::string folio;
 	std::string nombre;
 	int asiento;
 };
 
+// ================================================================
+// FUNCIÓN: registroParticipantes
+// TIPO DE RETORNO: registroParticipante (Devuelve un objeto completo)
+// PARÁMETROS: Ninguno.
+// DESCRIPCIÓN: Se encarga de la captura inicial de datos por consola.
+//              Crea una instancia local, la llena y la envía al exterior.
+// NOTA: Esta función NO asigna el asiento, solo prepara los datos básicos para la siguiente funcion.
+// ================================================================
 registroParticipante registroParticipantes() {
-	registroParticipante p1; //delclare p1 para el registro.
-	std::cout << "ingrese su  folio:\n",
-	std::cin >> p1.folio;
-	std::cout << "ingrese su nombre:\n";
-	std::cin >> p1.nombre; 
-	return p1;
+	// p1: Variable temporal de tipo estructura para almacenar los datos de entrada.
+	registroParticipante p1; 
 
+	std::cout << "ingrese su folio:\n";
+	std::cin >> p1.folio;
+
+	std::cout << "ingrese su nombre:\n";
+	// Nota: Si el nombre lleva espacios, se recomienda usar getline.
+	std::cin >> p1.nombre; 
+
+	// Retorna el objeto 'p1' con los datos capturados para ser usado en el main.
+	return p1;
 }
